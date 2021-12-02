@@ -6,8 +6,8 @@ export class GithubService {
   async getAllAction(
     repoName: string,
     branchName: string,
-    perPage = 25,
     filter: string,
+    perPage = 25,
   ): Promise<{ data: any[]; count: number }> {
     const { data } = await axios.get(
       `https://api.github.com/repos/${repoName}/${branchName}/commits`,
