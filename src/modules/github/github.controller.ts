@@ -9,9 +9,10 @@ export class GithubController {
   async getAllAction(
       @Param('repoName') repoName: string,
       @Param('branchName') branchName : string,
+      @Query('per_page') perPage : number,
       @Query('filter') filter: string
   )
       {
-    return this.githubService.getAllAction(repoName, branchName, filter);
+    return this.githubService.getAllAction(repoName, branchName, perPage, filter);
   }
 }
